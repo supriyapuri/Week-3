@@ -6,6 +6,7 @@ module.exports = {};
 
 module.exports.getAll = (page, perPage) => {
   return Author.find().limit(perPage).skip(perPage*page).lean();
+
 }
 
 module.exports.getById = (authorId) => {
