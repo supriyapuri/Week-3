@@ -160,6 +160,7 @@ describe("/books", () => {
       it("should return one matching book", async () => {
         const searchTerm = 'Superhero'
         const res = await request(server).get("/books/search?query=" + encodeURI(searchTerm));
+       
         expect(res.statusCode).toEqual(200);
         expect(res.body).toMatchObject([
           testBooks.find(book => book.title === 'Steelheart')
